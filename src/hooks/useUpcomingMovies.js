@@ -2,14 +2,14 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
 import { useDispatch } from "react-redux";
-import { addNowPlayingMovies } from "../utils/moviesSlice";
+import { addUpcomingMovies } from "../utils/moviesSlice";
 
-const useNowPlayingMovies = () => {
+const useUpcomingMovies = () => {
   const dispatch = useDispatch();
 
-  const getNowPlayingMovies = async () => {
+  const getUpcomingMovies = async () => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/movie/now_playing",
+      "https://api.themoviedb.org/3/movie/upcoming",
       API_OPTIONS
     );
 
@@ -17,12 +17,12 @@ const useNowPlayingMovies = () => {
 
     console.log(json.results);
 
-    dispatch(addNowPlayingMovies(json.results));
+    dispatch(addUpcomingMovies(json.results));
   };
 
   useEffect(() => {
-    getNowPlayingMovies();
+    getUpcomingMovies();
   }, []); // dependency array
 };
 
-export default useNowPlayingMovies;
+export default useUpcomingMovies;
