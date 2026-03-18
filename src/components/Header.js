@@ -23,7 +23,7 @@ const Header = () => {
       dispatch(removeUser()); // clear redux instantly
       navigate("/"); // redirect instantly
     } catch (error) {
-      console.log("Signout Error:", error);
+     // console.log("Signout Error:", error);
     }
   };
 
@@ -92,7 +92,7 @@ const Header = () => {
             className="bg-gradient-to-r from-red-600 to-red-800 text-white px-5 py-2 rounded-full font-semibold shadow-lg hover:scale-105 hover:shadow-red-700/50 transition duration-300"
             onClick={handleGptSearchClick}
           >
-            {showGptSearch? "Homepage":"🔎 GPT Search" } 
+            {showGptSearch? "Homepage":"🔎Search" } 
           </button>
 
           {/* User Avatar */}

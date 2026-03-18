@@ -60,7 +60,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log("User Logged In:", user);
+         // console.log("User Logged In:", user);
         })
         .catch((error) => {
           setErrorMessage(error.message);
