@@ -19,12 +19,7 @@ const Footer = () => {
         </div>
 
         {/* 🔗 RIGHT LINKS */}
-        <div className="flex flex-wrap justify-center gap-4 text-sm">
-          <span className="hover:text-white cursor-pointer transition">Home</span>
-          <span className="hover:text-white cursor-pointer transition">Movies</span>
-          <span className="hover:text-white cursor-pointer transition">About</span>
-          <span className="hover:text-white cursor-pointer transition">Contact</span>
-        </div>
+        
 
       </div>
 
