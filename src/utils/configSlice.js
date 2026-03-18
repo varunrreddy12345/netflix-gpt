@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const configSlice = createSlice({
   name: "config",
   initialState: {
@@ -14,5 +13,5 @@ const configSlice = createSlice({
   },
 });
 
-export const {changeLanguage} = configSlice.actions;
-export default configSlice.reducer
+export const { changeLanguage } = configSlice.actions;
+export default configSlice.reducer;
