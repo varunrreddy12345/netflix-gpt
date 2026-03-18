@@ -23,7 +23,7 @@ const Header = () => {
       dispatch(removeUser()); // clear redux instantly
       navigate("/"); // redirect instantly
     } catch (error) {
-     // console.log("Signout Error:", error);
+      // console.log("Signout Error:", error);
     }
   };
 
@@ -59,20 +59,21 @@ const Header = () => {
   const handelLanguageChange = (e) => {
     dispatch(changeLanguage(e.target.value));
   };
+
   return (
-    <div className="absolute top-0 left-0 w-full px-8 py-4 z-50 flex justify-between items-center bg-gradient-to-b from-black">
+    <div className="absolute top-0 left-0 w-full px-4 md:px-8 py-3 md:py-4 z-50 flex flex-col md:flex-row justify-between items-center bg-gradient-to-b from-black gap-3 md:gap-0">
       {/* Logo */}
-      <img className="w-36" src={LOGO} alt="Netflix Logo" />
+      <img className="w-28 md:w-36" src={LOGO} alt="Netflix Logo" />
 
       {/* Show only in browse page */}
       {location.pathname === "/browse" && (
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap justify-center md:justify-end items-center gap-2 md:gap-4 w-full md:w-auto">
           {showGptSearch && (
             <select
-              className="bg-black text-white border border-gray-600 px-4 py-2 rounded-lg 
-             shadow-md outline-none cursor-pointer 
-             hover:border-red-600 focus:ring-2 focus:ring-red-600 
-             transition duration-300"
+              className="bg-black text-white border border-gray-600 px-2 md:px-4 py-1 md:py-2 rounded-lg 
+            shadow-md outline-none cursor-pointer text-sm md:text-base
+            hover:border-red-600 focus:ring-2 focus:ring-red-600 
+            transition duration-300"
               onChange={handelLanguageChange}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
@@ -89,15 +90,15 @@ const Header = () => {
 
           {/* GPT Search Button */}
           <button
-            className="bg-gradient-to-r from-red-600 to-red-800 text-white px-5 py-2 rounded-full font-semibold shadow-lg hover:scale-105 hover:shadow-red-700/50 transition duration-300"
+            className="bg-gradient-to-r from-red-600 to-red-800 text-white px-3 md:px-5 py-1 md:py-2 rounded-full text-sm md:text-base font-semibold shadow-lg hover:scale-105 hover:shadow-red-700/50 transition duration-300"
             onClick={handleGptSearchClick}
           >
-            {showGptSearch? "Homepage":"🔎Search" } 
+            {showGptSearch ? "Homepage" : "🔎Search"}
           </button>
 
           {/* User Avatar */}
           <img
-            className="w-10 h-10 rounded-full border-2 border-red-500 hover:scale-110 transition duration-300 cursor-pointer"
+            className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-red-500 hover:scale-110 transition duration-300 cursor-pointer"
             src={USER_AVATAR}
             alt="User Avatar"
           />
@@ -105,7 +106,7 @@ const Header = () => {
           {/* Sign Out Button */}
           <button
             onClick={handleSignOut}
-            className="bg-red-600 px-4 py-2 rounded-md text-white font-semibold hover:bg-red-700 transition"
+            className="bg-red-600 px-2 md:px-4 py-1 md:py-2 text-sm md:text-base rounded-md text-white font-semibold hover:bg-red-700 transition"
           >
             Sign Out
           </button>

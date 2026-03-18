@@ -5,13 +5,12 @@ const lang = {
   },
   hindi: {
     search: "खोज",
-     gptSearchPlaceholder: "🎬 आज आप क्या देखना चाहते हैं?",
-
+    gptSearchPlaceholder: "🎬 आज आप क्या देखना चाहते हैं?",
   },
 
   spanish: {
     search: "buscar",
-     gptSearchPlaceholder: "🎬 ¿Qué quieres ver hoy?",
+    gptSearchPlaceholder: "🎬 ¿Qué quieres ver hoy?",
   },
 };
 
